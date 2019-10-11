@@ -2,8 +2,8 @@ package com.thoughtworks.game;
 
 public class GameOfLife {
 
-    int[][] initialCluster;
-    int[][] evolvePattern;
+    private int[][] initialCluster;
+    private int[][] evolvePattern;
 
     public GameOfLife(int[][] initialCluster) {
         this.initialCluster = initialCluster;
@@ -12,10 +12,10 @@ public class GameOfLife {
     public int[][] evolvePattern() {
 
         int totalAlive = 0;
-        for (int row = 0; row < initialCluster.length; row++) {
-            for (int column = 0; column < initialCluster[row].length; column++) {
-                    if(initialCluster[row][column]==1)
-                        ++totalAlive;
+        for (int[] row : initialCluster) {
+            for (int column : row) {
+                if (column == 1)
+                    ++totalAlive;
             }
         }
 

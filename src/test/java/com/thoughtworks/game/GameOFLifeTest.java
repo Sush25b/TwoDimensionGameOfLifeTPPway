@@ -25,7 +25,7 @@ public class GameOFLifeTest {
     }
 
     @Test
-    public void givenClusterWithThreeAlive_whenEvolve_thenReturnClusterOFAllDead() {   //3 alive
+    public void givenClusterWithThreeAlive_whenEvolve_thenReturnClusterOFAllAlive() {   //3 alive
         int[][] initialCluster = {{0, 1}, {1, 1}};
         GameOfLife gameOfLife = new GameOfLife(initialCluster);
 
@@ -34,4 +34,13 @@ public class GameOFLifeTest {
         assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
     }
 
+    @Test
+    public void givenClusterWithAllAlive_whenEvolve_thenReturnClusterOFAllAlive() {   //4 alive
+        int[][] initialCluster = {{1, 1}, {1, 1}};
+        GameOfLife gameOfLife = new GameOfLife(initialCluster);
+
+        int[][] evolvedCluster = {{1, 1}, {1, 1}};
+
+        assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
+    }
 }
