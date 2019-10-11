@@ -13,4 +13,14 @@ public class GameOFLifeTest {
 
         assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
     }
+
+    @Test
+    public void givenClusterWithTwoAlive_whenEvolve_thenReturnClusterOFAllDead() {
+        int[][] initialCluster = {{0, 0}, {1, 1}};
+        GameOfLife gameOfLife = new GameOfLife(initialCluster);
+
+        int[][] evolvedCluster = {{0, 0}, {0, 0}};
+
+        assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
+    }
 }
