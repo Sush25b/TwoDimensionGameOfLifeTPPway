@@ -1,6 +1,7 @@
 package com.thoughtworks.game;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class GameOFLifeTest {
@@ -40,6 +41,16 @@ public class GameOFLifeTest {
         GameOfLife gameOfLife = new GameOfLife(initialCluster);
 
         int[][] evolvedCluster = {{1, 1}, {1, 1}};
+
+        assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
+    }
+
+    @Test
+    public void givenClusterWithAllAlive_whenEvolve_thenReturnClusterOFAllDead() {   //3*3
+        int[][] initialCluster = {{1, 1}, {1, 1}, {1, 1}};
+        GameOfLife gameOfLife = new GameOfLife(initialCluster);
+
+        int[][] evolvedCluster = {{1, 1}, {0, 0}, {1, 1}};
 
         assertArrayEquals(evolvedCluster, gameOfLife.evolvePattern());
     }

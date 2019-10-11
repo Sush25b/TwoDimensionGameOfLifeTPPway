@@ -3,10 +3,14 @@ package com.thoughtworks.game;
 public class GameOfLife {
 
     private int[][] initialCluster;
-    private int[][] evolvePattern;
+    private int[][] evolveCluster;
 
     public GameOfLife(int[][] initialCluster) {
         this.initialCluster = initialCluster;
+    }
+
+    private int[][] initializeEvolvePatter(){
+
     }
 
     public int[][] evolvePattern() {
@@ -20,10 +24,10 @@ public class GameOfLife {
         }
 
         if(totalAlive<=2) {
-            evolvePattern = new int[][]{{0, 0}, {0, 0,}};
-            return evolvePattern;
+            evolveCluster = new int[][]{{0, 0}, {0, 0,}};
+            return evolveCluster;
         }
-        evolvePattern= new int[][]{{1,1},{1,1}};
-        return evolvePattern;
+        evolveCluster = new int[][]{{1,1},{1,1}};
+        return evolveCluster;
     }
 }
